@@ -194,10 +194,10 @@
 </head>
 <body>
   <div class="container">
-    <div class="language-switch-fixed">
+  <div class="language-switch-fixed">
     <img src="https://flagcdn.com/w40/vn.png" alt="Tiếng Việt" title="Tiếng Việt" onclick="switchLang('vi')" class="flag-icon">
     <img src="https://flagcdn.com/w40/us.png" alt="English" title="English" onclick="switchLang('en')" class="flag-icon">
-    </div>
+  </div>
     <div class="avatar-box">
       <a href="https://ibb.co/9L8fZLZ"><img src="https://i.ibb.co/9L8fZLZ/cef712d527fc15809c8b19049b8851b32b6c29dbe7820f4b57ec929dd2d9e3aa.png" alt="Avatar" class="avatar">
       <div class="qr-top">
@@ -218,6 +218,10 @@
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 </iframe>
+    <div class="info" id="description">
+      * Kinh nghiệm về website, Google Ads, Google Shopping, YouTube SEO.<br>
+      * Đồng sở hữu các thương hiệu: Sàn TMĐT luu.vn, học từ chuyên gia msvui.com, hệ thống TTS ttso.vn, Giải pháp vận tải.
+    </div>
 
     <div class="video-button" onclick="document.getElementById('formPopup').style.display='block'">Đăng Ký Tư Vấn</div>
 
@@ -315,24 +319,50 @@ ORG:Kimberry
 TITLE:Kế toán
 END:VCARD`;
 
-      const blob = new Blob([vcfData], { type: 'text/vcard' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'HuynhTanHoang.vcf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    }
+const translations = {
+      vi: {
+        title: "Huỳnh Tấn Hoàng - NCV Card",
+        description: `* Đã tư vấn và triển khai marketing online cho hơn 500 doanh nghiệp trong lĩnh vực nông nghiệp.<br>
+        * Kinh nghiệm về website, Google Ads, Google Shopping, YouTube SEO.<br>
+        * Đồng sở hữu các thương hiệu: Sàn TMĐT luu.vn, học từ chuyên gia msvui.com, hệ thống TTS ttso.vn, Giải pháp vận tải.`,
+        consult: "Đăng Ký Tư Vấn",
+        roles: [
+          "Tổng giám đốc: công ty Kimxin Việt Nam",
+          "Cố vấn chiến lược",
+          "IT công ty Long Hoàng",
+          "Đồng hành cùng: Thực chiến tại doanh nghiệp",
+          "Chuyên gia: Vì bạn xứng đáng"
+        ]
+      },
+      en: {
+        title: "Huynh Tan Hoang - NCV Card",
+        description: `* Consulted and implemented online marketing for over 500 agricultural businesses.<br>
+        * Experienced in websites, Google Ads, Google Shopping, YouTube SEO.<br>
+        * Co-owner of brands: luu.vn, msvui.com, ttso.vn, logistics solutions.`,
+        consult: "Register for Consultation",
+        roles: [
+          "CEO: Kimxin Vietnam Company",
+          "Strategic Advisor",
+          "IT at Long Hoang Company",
+          "Partner: Practical Business Training",
+          "Expert: Because You Deserve It"
+        ]
+      }
+    };
+
     function switchLang(lang) {
-    if (lang === 'vi') {
-      alert("Bạn đã chọn Tiếng Việt");
-    } else if (lang === 'en') {
-      alert("You selected English");
+      document.getElementById("title").innerHTML = translations[lang].title;
+      document.getElementById("description").innerHTML = translations[lang].description;
+      document.getElementById("consultButton").innerHTML = translations[lang].consult;
+
+      const roleElements = [
+        "role1", "role2", "role3", "role4", "role5"
+      ];
+
+      roleElements.forEach((id, index) => {
+        document.getElementById(id).innerHTML = translations[lang].roles[index];
+      });
     }
-    // Bạn có thể thêm logic chuyển đổi nội dung tại đây
-  }
   </script>
 </body>
 </html>
