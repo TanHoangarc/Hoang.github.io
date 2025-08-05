@@ -164,9 +164,39 @@
       border-radius: 6px;
       cursor: pointer;
     }
+    .language-switch-fixed {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 6px 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    }
+    
+    .language-switch-fixed .flag-icon {
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      transition: transform 0.2s ease;
+    }
+    
+    .language-switch-fixed .flag-icon:hover {
+      transform: scale(1.1);
+    }
+
   </style>
 </head>
 <body>
+  <div class="language-switch-fixed">
+  <img src="https://flagcdn.com/w40/vn.png" alt="Tiếng Việt" title="Tiếng Việt" onclick="switchLang('vi')" class="flag-icon">
+  <img src="https://flagcdn.com/w40/us.png" alt="English" title="English" onclick="switchLang('en')" class="flag-icon">
+  </div>
   <div class="container">
     <div class="avatar-box">
       <a href="https://ibb.co/9L8fZLZ"><img src="https://i.ibb.co/9L8fZLZ/cef712d527fc15809c8b19049b8851b32b6c29dbe7820f4b57ec929dd2d9e3aa.png" alt="Avatar" class="avatar">
