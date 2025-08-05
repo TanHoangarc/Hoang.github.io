@@ -325,6 +325,14 @@ END:VCARD`;
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
     }
+    function switchLang(lang) {
+    if (lang === 'vi') {
+      alert("Bạn đã chọn Tiếng Việt");
+    } else if (lang === 'en') {
+      alert("You selected English");
+    }
+    // Bạn có thể thêm logic chuyển đổi nội dung tại đây
+  }
   </script>
 </body>
 </html>
