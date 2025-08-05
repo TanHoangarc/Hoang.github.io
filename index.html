@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Huỳnh Tấn Hoàng - NCV Card</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NCV Card - Huỳnh Tấn Hoàng</title>
   <style>
     body {
       margin: 0;
@@ -12,6 +12,7 @@
       text-align: center;
       padding: 20px;
     }
+
     .container {
       max-width: 480px;
       margin: 0 auto;
@@ -20,6 +21,7 @@
       padding: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
+
     .avatar-box {
       position: relative;
       display: inline-block;
@@ -41,14 +43,10 @@
       padding: 4px;
       box-shadow: 0 0 6px rgba(0,0,0,0.1);
     }
+
     h1 {
       margin: 10px 0 4px;
       font-size: 22px;
-      color: #333;
-    }
-    .info {
-      margin-top: 20px;
-      font-size: 16px;
       color: #333;
     }
 
@@ -56,6 +54,7 @@
       color: #357;
       margin-bottom: 16px;
     }
+
     .phone-button {
       background-color: #8b004f;
       color: white;
@@ -67,6 +66,7 @@
       width: 80%;
       margin-bottom: 16px;
     }
+
     .share-buttons {
       display: flex;
       justify-content: space-around;
@@ -75,19 +75,23 @@
       background-color: #f8f8f8;
       border-radius: 12px;
     }
+
     .share-buttons div {
       display: flex;
       align-items: center;
       gap: 6px;
       font-size: 14px;
       color: #333;
+      cursor: pointer;
     }
+
     iframe {
       width: 100%;
-      height: 300px;
+      max-width: 100%;
       border-radius: 12px;
-      margin-top: 10px;
+      margin-top: 20px;
     }
+
     .video-button {
       background-color: #0033cc;
       color: white;
@@ -98,78 +102,66 @@
       font-size: 14px;
       cursor: pointer;
     }
-    .role-section, .icon-links {
+
+    .info {
       margin-top: 20px;
+      font-size: 16px;
+      color: #333;
     }
+
+    .role-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      margin-top: 30px;
+      text-align: left;
+    }
+
     .role-item {
       display: flex;
       align-items: center;
-      background: #f0fff0;
+      gap: 12px;
+      background: #f0f0f0;
+      padding: 10px;
       border-radius: 10px;
-      padding: 8px;
-      margin: 6px 0;
-      justify-content: space-between;
     }
+
     .role-item img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
     }
+
     .role-text {
-      flex: 1;
-      text-align: left;
-      margin-left: 10px;
       font-size: 14px;
+      flex-grow: 1;
     }
+
     .icon-links {
       display: flex;
       flex-wrap: wrap;
+      gap: 10px;
       justify-content: center;
-      gap: 14px;
+      margin-top: 30px;
     }
+
     .icon-links a {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 60px;
       text-decoration: none;
-      color: #333;
       font-size: 12px;
+      width: 60px;
+      color: #000;
     }
+
     .icon-links img {
       width: 40px;
       height: 40px;
       margin-bottom: 4px;
     }
-    .form-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      padding: 20px;
-      z-index: 999;
-      width: 90%;
-      max-width: 400px;
-    }
-    .form-popup input, .form-popup textarea {
-      width: 80%;
-      padding: 10px;
-      margin: 6px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    .form-popup button {
-      background: black;
-      color: white;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+
     .language-switch-fixed {
       position: fixed;
       top: 10px;
@@ -177,12 +169,12 @@
       z-index: 1000;
       display: flex;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.9);
       padding: 6px 10px;
       border-radius: 8px;
       box-shadow: 0 0 6px rgba(0,0,0,0.1);
     }
-    
+
     .language-switch-fixed .flag-icon {
       width: 30px;
       height: 20px;
@@ -191,52 +183,50 @@
       border: 1px solid #ccc;
       transition: transform 0.2s ease;
     }
-    
+
     .language-switch-fixed .flag-icon:hover {
       transform: scale(1.1);
     }
-
   </style>
 </head>
 <body>
-  <div class="container">
   <div class="language-switch-fixed">
     <img src="https://flagcdn.com/w40/vn.png" alt="Tiếng Việt" title="Tiếng Việt" onclick="switchLang('vi')" class="flag-icon">
     <img src="https://flagcdn.com/w40/us.png" alt="English" title="English" onclick="switchLang('en')" class="flag-icon">
   </div>
+
+  <div class="container">
     <div class="avatar-box">
-      <a href="https://ibb.co/9L8fZLZ"><img src="https://i.ibb.co/9L8fZLZ/cef712d527fc15809c8b19049b8851b32b6c29dbe7820f4b57ec929dd2d9e3aa.png" alt="Avatar" class="avatar">
+      <img src="https://i.ibb.co/9L8fZLZ/cef712d527fc15809c8b19049b8851b32b6c29dbe7820f4b57ec929dd2d9e3aa.png" alt="Avatar" class="avatar">
       <div class="qr-top">
-        <a href="https://ibb.co/GvGfpsCv"><img src="https://i.ibb.co/GvGfpsCv/Ho-ng.jpg" alt="QR" width="80">
+        <img src="https://i.ibb.co/GvGfpsCv/Ho-ng.jpg" alt="QR" width="80">
       </div>
     </div>
-    <h1>Huỳnh Tấn Hoàng</h1>
+    <h1 id="title">Huỳnh Tấn Hoàng - NCV Card</h1>
     <div class="subtitle">Kế toán Kimberry</div>
     <a href="tel:0867141877" class="phone-button">📞 0867 141 877</a>
 
     <div class="share-buttons">
-      <div onclick="shareCard()">🔗 Chia sẻ</div>
+      <div onclick="navigator.share ? navigator.share({ title: document.title, url: location.href }) : alert('Trình duyệt không hỗ trợ')">🔗 Chia sẻ</div>
       <div onclick="downloadVCard()">📇 Lưu Danh bạ</div>
     </div>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/J0MAmvy7y8k?si=MqncRvvtpViXuCQT" 
-  title="YouTube video player" frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/J0MAmvy7y8k?si=MqncRvvtpViXuCQT" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
+    <div class="video-button" id="consultButton">Đăng Ký Tư Vấn</div>
+
     <div class="info" id="description">
+      * Đã tư vấn và triển khai marketing online cho hơn 500 doanh nghiệp trong lĩnh vực nông nghiệp.<br>
       * Kinh nghiệm về website, Google Ads, Google Shopping, YouTube SEO.<br>
       * Đồng sở hữu các thương hiệu: Sàn TMĐT luu.vn, học từ chuyên gia msvui.com, hệ thống TTS ttso.vn, Giải pháp vận tải.
     </div>
 
-    <div class="video-button" onclick="document.getElementById('formPopup').style.display='block'">Đăng Ký Tư Vấn</div>
-
     <div class="role-section">
-      <div class="role-item"><img src="https://i.ibb.co/VY0kfHdv/Logo-Nhon-My-700x700-2-150x150.png" alt="Logo-Nhon-My-700x700-2-150x150" border="0"><div class="role-text">Tổng giám đốc: công ty Kimxin Việt Nam</div><span>🔗</span></div>
-      <div class="role-item"><img src="https://i.ibb.co/Fkwjsw18/logo-ttso-v3-4-150x150.png" alt="logo-ttso-v3-4-150x150" border="0"><div class="role-text">Cố vấn chiến lược: </div><span>🔗</span></div>
-      <div class="role-item"><img src="https://i.ibb.co/Myj0W4Br/logo-ncv-tron-v2-1-150x150.png" alt="logo-ncv-tron-v2-1-150x150" border="0"><div class="role-text">IT công ty Long Hoàng</div><span>🔗</span></div>
-      <div class="role-item"><img src="https://i.ibb.co/9m2XRcKS/Logo-Luu-Vuong-1-150x150.png" alt="Logo-Luu-Vuong-1-150x150" border="0"><div class="role-text">Đồng hành cùng: Thực chiến tại doanh nghiệp</div><span>🔗</span></div>
-      <div class="role-item"><img src="https://i.ibb.co/h1g15RgC/logo-ACU-11-150x150.png" alt="logo-ACU-11-150x150" border="0"><div class="role-text">Chuyên gia: Vì bạn xứng đáng</div><span>🔗</span></div>
+      <div class="role-item"><img src="https://i.ibb.co/VY0kfHdv/Logo-Nhon-My-700x700-2-150x150.png"><div class="role-text" id="role1">Tổng giám đốc: công ty Kimxin Việt Nam</div><span>🔗</span></div>
+      <div class="role-item"><img src="https://i.ibb.co/Fkwjsw18/logo-ttso-v3-4-150x150.png"><div class="role-text" id="role2">Cố vấn chiến lược</div><span>🔗</span></div>
+      <div class="role-item"><img src="https://i.ibb.co/Myj0W4Br/logo-ncv-tron-v2-1-150x150.png"><div class="role-text" id="role3">IT công ty Long Hoàng</div><span>🔗</span></div>
+      <div class="role-item"><img src="https://i.ibb.co/9m2XRcKS/Logo-Luu-Vuong-1-150x150.png"><div class="role-text" id="role4">Đồng hành cùng: Thực chiến tại doanh nghiệp</div><span>🔗</span></div>
+      <div class="role-item"><img src="https://i.ibb.co/h1g15RgC/logo-ACU-11-150x150.png"><div class="role-text" id="role5">Chuyên gia: Vì bạn xứng đáng</div><span>🔗</span></div>
     </div>
 
     <div class="icon-links">
@@ -294,41 +284,14 @@
       </a>
     </div>
 
-  <div id="formPopup" class="form-popup">
-    <h2>Gửi email</h2>
-    <input type="text" placeholder="Tên">
-    <input type="email" placeholder="Email">
-    <input type="tel" placeholder="Điện thoại">
-    <textarea placeholder="Ghi chú"></textarea>
-    <button onclick="document.getElementById('formPopup').style.display='none'">Gửi</button>
+    <!-- ... -->
   </div>
+
   <script>
-    function shareCard() {
-      if (navigator.share) {
-        navigator.share({
-          title: 'Huỳnh Tấn Hoàng - NCV Card',
-          text: 'Xem danh thiếp điện tử của tôi',
-          url: window.location.href
-        }).catch(console.error);
-      } else {
-        alert("Trình duyệt không hỗ trợ chia sẻ. Vui lòng sao chép link thủ công:\n" + window.location.href);
-      }
-    }
-
-    function downloadVCard() {
-      const vcfData = `BEGIN:VCARD
-VERSION:3.0
-FN:Huỳnh Tấn Hoàng
-TEL;TYPE=CELL:0867141877
-EMAIL:hoang@example.com
-ORG:Kimberry
-TITLE:Kế toán
-END:VCARD`;
-
-const translations = {
+    const translations = {
       vi: {
         title: "Huỳnh Tấn Hoàng - NCV Card",
-        description: `
+        description: `* Đã tư vấn và triển khai marketing online cho hơn 500 doanh nghiệp trong lĩnh vực nông nghiệp.<br>
         * Kinh nghiệm về website, Google Ads, Google Shopping, YouTube SEO.<br>
         * Đồng sở hữu các thương hiệu: Sàn TMĐT luu.vn, học từ chuyên gia msvui.com, hệ thống TTS ttso.vn, Giải pháp vận tải.`,
         consult: "Đăng Ký Tư Vấn",
@@ -342,7 +305,7 @@ const translations = {
       },
       en: {
         title: "Huynh Tan Hoang - NCV Card",
-        description: `
+        description: `* Consulted and implemented online marketing for over 500 agricultural businesses.<br>
         * Experienced in websites, Google Ads, Google Shopping, YouTube SEO.<br>
         * Co-owner of brands: luu.vn, msvui.com, ttso.vn, logistics solutions.`,
         consult: "Register for Consultation",
@@ -361,13 +324,25 @@ const translations = {
       document.getElementById("description").innerHTML = translations[lang].description;
       document.getElementById("consultButton").innerHTML = translations[lang].consult;
 
-      const roleElements = [
-        "role1", "role2", "role3", "role4", "role5"
-      ];
+      for (let i = 0; i < translations[lang].roles.length; i++) {
+        document.getElementById(`role${i + 1}`).innerHTML = translations[lang].roles[i];
+      }
+    }
 
-      roleElements.forEach((id, index) => {
-        document.getElementById(id).innerHTML = translations[lang].roles[index];
-      });
+    function downloadVCard() {
+      const blob = new Blob([`
+BEGIN:VCARD
+VERSION:3.0
+FN:Huỳnh Tấn Hoàng
+TEL:0867141877
+EMAIL:hoang@example.com
+END:VCARD
+      `], { type: 'text/vcard' });
+
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'HuynhTanHoang.vcf';
+      link.click();
     }
   </script>
 </body>
