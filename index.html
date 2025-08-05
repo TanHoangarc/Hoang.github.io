@@ -179,8 +179,8 @@
     <a href="tel:0867141877" class="phone-button">📞 0867 141 877</a>
 
     <div class="share-buttons">
-      <div>🔗 Chia sẻ</div>
-      <div>📇 Lưu Danh bạ</div>
+      <div onclick="shareCard()">🔗 Chia sẻ</div>
+      <div onclick="downloadVCard()">📇 Lưu Danh bạ</div>
     </div>
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/J0MAmvy7y8k?si=MqncRvvtpViXuCQT" 
@@ -262,5 +262,39 @@
     <textarea placeholder="Ghi chú"></textarea>
     <button onclick="document.getElementById('formPopup').style.display='none'">Gửi</button>
   </div>
+  <script>
+    function shareCard() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Huỳnh Tấn Hoàng - NCV Card',
+          text: 'Xem danh thiếp điện tử của tôi',
+          url: window.location.href
+        }).catch(console.error);
+      } else {
+        alert("Trình duyệt không hỗ trợ chia sẻ. Vui lòng sao chép link thủ công:\n" + window.location.href);
+      }
+    }
+
+    function downloadVCard() {
+      const vcfData = `BEGIN:VCARD
+VERSION:3.0
+FN:Huỳnh Tấn Hoàng
+TEL;TYPE=CELL:0867141877
+EMAIL:hoang@example.com
+ORG:Kimberry
+TITLE:Kế toán
+END:VCARD`;
+
+      const blob = new Blob([vcfData], { type: 'text/vcard' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'HuynhTanHoang.vcf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+  </script>
 </body>
 </html>
